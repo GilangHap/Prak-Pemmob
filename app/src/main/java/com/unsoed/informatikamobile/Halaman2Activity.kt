@@ -44,6 +44,10 @@ class Halaman2Activity : AppCompatActivity() {
             imgIcon.setImageResource(R.drawable.ic_himpunan)
             tvLayout.setText(R.string.ig_himpunan)
         }
+        with(binding.layoutBuku) {
+            imgIcon.setImageResource(R.drawable.ic_book)
+            tvLayout.text = "Koleksi Buku"
+        }
     }
 
     private fun initListener() {
@@ -81,6 +85,10 @@ class Halaman2Activity : AppCompatActivity() {
         // Tombol kembali
         binding.btnBack.setOnClickListener {
             finish()
+        }
+
+        binding.layoutBuku.root.setOnClickListener {
+            startActivity(Intent(this, DaftarBukuActivity::class.java))
         }
     }
 }
